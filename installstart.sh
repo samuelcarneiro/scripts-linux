@@ -28,7 +28,7 @@ then
     read continuar
     if [ $continuar == "s" ];
     then
-        sudo ./installs.sh
+        sudo ./installstart.sh
     elif [ $continuar == "n" ];
     then
         echo -e "\e[01;36mAté mais!\e[00m"
@@ -44,7 +44,7 @@ then
     read continuar
     if [ $continuar == "s" ];
     then
-        sudo ./installs.sh
+        sudo ./installstart.sh
     elif [ $continuar == "n" ];
     then
         echo -e "\e[01;36mAté mais!\e[00m"
@@ -101,7 +101,7 @@ then
         echo -e "\e[01;33mRetornando ao menu principal!\e[00m"
     fi
     echo ""
-    ./installs.sh
+    ./installstart.sh
 elif [ $opcao == "4" ];
 then
     echo "+--------------------------------------------------------------+"
@@ -181,7 +181,7 @@ then
         echo "Voltando ao menu principal..."
     fi
     echo ""
-    ./installs.sh
+    ./installstart.sh
 elif [ $opcao == "5" ];
 then
     echo -e "\e[01;36mLimpeza lógica em andamento!\e[00m"
@@ -192,7 +192,7 @@ then
     read continuar
     if [ $continuar == "s" ];
     then
-        sudo ./installs.sh
+        sudo ./installstart.sh
     elif [ $continuar == "n" ];
     then
         echo -e "\e[01;36mAté mais!\e[00m"
