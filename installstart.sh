@@ -138,7 +138,7 @@ then
         echo -e "\e[01;33mConfigurando a nova senha do MySQL\e[00m"
         echo -e "\e[01;33mInforme uma nova senha:\e[00m"
         read passwdMysql;
-        mysql --user=root --password='' -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$passwdMysql';"
+        sudo mysql --user=root --password='' -e "ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '$passwdMysql';"
         echo -e "\e[01;33mSenha alterada com sucesso!\e[00m"
     elif [ $opcaoDev == "3" ];
     then
