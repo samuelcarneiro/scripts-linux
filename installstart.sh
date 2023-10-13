@@ -37,7 +37,7 @@ then
 elif [ $opcao == "2" ];
 then
     echo -e "\e[01;36mInstalação inicial em andamento!\e[00m"
-    sudo apt install git kodi unrar ubuntu-restricted-extras qbittorrent gparted -y
+    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch -y
     echo -e "\e[01;32mInstalação inicial finalizada!\e[00m"
     echo ""
     echo "Deseja continuar? [s/n] "
@@ -61,8 +61,7 @@ then
     echo "| 4 - Gparted                                                  |"
     echo "| 5 - Git                                                      |"
     echo "| 6 - Gimp                                                     |"
-    echo "| 7 -                                                          |"
-    echo "| 8 -                                                          |"
+    echo "| 7 - Neofetch                                                 |"
     echo "| 9 - Retornar ao Menu Principal                               |"
     echo "+--------------------------------------------------------------+"
     read opcao2;
@@ -96,6 +95,12 @@ then
         echo -e "\e[01;36mInstalação do Gimp iniciada...\e[00m"
         sudo apt install gimp -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
+    elif [ $opcao2 == "7" ];
+    then
+        echo -e "\e[01;36mInstalação do Neofetch iniciada...\e[00m"
+        sudo apt install neofetch -y
+        echo -e "\e[01;32mInstalado com sucesso!\e[00m"
+        neofetch
     elif [ $opcao2 == "9" ];
     then
         echo -e "\e[01;33mRetornando ao menu principal!\e[00m"
@@ -112,7 +117,6 @@ then
     echo "| 3 - MYSQL_SECURE_INSTALATION                                 |"
     echo "| 4 - PHP                                                      |"
     echo "| 5 - Composer                                                 |"
-    echo "| 6 -                                                          |"
     echo "| 9 - Retornar ao Menu Principal                               |"
     echo "+--------------------------------------------------------------+"
     read opcaoDev;
