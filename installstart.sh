@@ -56,12 +56,11 @@ then
     echo "| Instalação de Programas Específicos                          |"
     echo "+--------------------------------------------------------------+"
     echo "| 1 - VLC                                                      |"
-    echo "| 2 - KODI                                                     |"
-    echo "| 3 - Qbittorrent                                              |"
-    echo "| 4 - Gparted                                                  |"
-    echo "| 5 - Git                                                      |"
-    echo "| 6 - Gimp                                                     |"
-    echo "| 7 - Neofetch                                                 |"
+    echo "| 2 - Qbittorrent                                              |"
+    echo "| 3 - Gparted                                                  |"
+    echo "| 4 - Git                                                      |"
+    echo "| 5 - Gimp                                                     |"
+    echo "| 6 - Neofetch                                                 |"
     echo "| 9 - Retornar ao Menu Principal                               |"
     echo "+--------------------------------------------------------------+"
     read opcao2;
@@ -72,30 +71,25 @@ then
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
     elif [ $opcao2 == "2" ];
     then
-        echo -e "\e[01;36mInstalação do Kodi iniciada...\e[00m"
-        sudo apt install kodi -y
-        echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "3" ];
-    then
         echo -e "\e[01;36mInstalação do QBittorrent iniciada...\e[00m"
         sudo apt install qbittorrent -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "4" ];
+    elif [ $opcao2 == "3" ];
     then
         echo -e "\e[01;36mINstalação do GParted iniciada...\e[00m"
         sudo apt install gparted -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "5" ];
+    elif [ $opcao2 == "4" ];
     then
         echo -e "\e[01;36mInstalação do Git iniciada...\e[00m"
         sudo apt install git -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "6" ];
+    elif [ $opcao2 == "5" ];
     then
         echo -e "\e[01;36mInstalação do Gimp iniciada...\e[00m"
         sudo apt install gimp -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "7" ];
+    elif [ $opcao2 == "6" ];
     then
         echo -e "\e[01;36mInstalação do Neofetch iniciada...\e[00m"
         sudo apt install neofetch -y
