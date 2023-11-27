@@ -37,7 +37,7 @@ then
 elif [ $opcao == "2" ];
 then
     echo -e "\e[01;36mInstalação inicial em andamento!\e[00m"
-    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch -y
+    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch gimp -y
     echo -e "\e[01;32mInstalação inicial finalizada!\e[00m"
     echo ""
     echo "Deseja continuar? [s/n] "
