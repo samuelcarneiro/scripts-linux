@@ -61,6 +61,7 @@ then
     echo "| 4 - Git                                                      |"
     echo "| 5 - Gimp                                                     |"
     echo "| 6 - Neofetch                                                 |"
+    echo "| 7 - Pacotes Multimídia                                       |"
     echo "| 9 - Retornar ao Menu Principal                               |"
     echo "+--------------------------------------------------------------+"
     read opcao2;
@@ -95,6 +96,11 @@ then
         sudo apt install neofetch -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
         neofetch
+    elif [ $opcao2 == "7" ];
+    then
+        echo -e "\e[01;36mInstalação do Ubuntu Restricted Extras iniciada...\e[00m"
+        sudo apt install ubuntu-restricted-extras -y
+        echo -e "\e[01;32mInstalado com sucesso!\e[00m"
     elif [ $opcao2 == "9" ];
     then
         echo -e "\e[01;33mRetornando ao menu principal!\e[00m"
