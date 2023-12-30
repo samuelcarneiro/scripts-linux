@@ -165,7 +165,7 @@ then
         sudo systemctl restart mysql.service
         echo -e "\e[01;32m[ SERVIDOR OK ]\e[00m"
         echo -e "\e[01;32m[ Servidor WEB instalado e configurado com sucesso!! ]\e[00m"
-    if [ $opcaoDev == "1" ];
+    elif [ $opcaoDev == "1" ];
     then
         echo -e "\e[01;36mInstalação do APACHE2 iniciada...\e[00m"
         sudo apt install apache2 libapache2-mod-php -y
