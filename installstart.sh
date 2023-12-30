@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script desenvolvido por mim
-# 01 OUT 2023
+# 30 DEZ 2023
 echo "+--------------------------------------------------------------+"
 echo "|         SCRIPT START LINUX - O QUE DESEJA FAZER?             |"
 echo "+--------------------------------------------------------------+"
