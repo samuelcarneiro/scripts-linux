@@ -10,7 +10,7 @@ echo "|                                                             |"
 echo "| 1 - Iniciar serviços do Servidor Web Local                  |"
 echo "| 2 - Verificar status do Servidor Web Local                  |"
 echo "| 3 - Parar serviços do Servidor Web Local                    |"
-echo "| 9 - Sair do scriptv                                         |"
+echo "| 9 - Sair do script                                          |"
 echo "|                                                             |"
 echo "+-------------------------------------------------------------+"
 echo "| O que deseja fazer?"
@@ -88,7 +88,7 @@ then
     echo ""
     echo ""
     echo ""
-elif [ $opcao == "4" ];
+elif [ $opcao == "9" ];
 then
     sleep 1
     echo -e "# \e[01;36mAté mais!\e[00m]"
