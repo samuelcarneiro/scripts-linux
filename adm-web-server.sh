@@ -3,16 +3,16 @@
 #Samuel Carneiro - 23/01/2024 (terça-feira)
 #
 
-echo "# ----------------------------------------------------------- #"
-echo "# Bem vindo ao script de Administração do Servidor Web Local  #"
-echo "# ----------------------------------------------------------- #"
-echo "#                                                             #"
-echo "# 1 - Iniciar serviços do Servidor Web Local                  #"
-echo "# 2 - Verificar status do Servidor Web Local                  #"
-echo "# 3 - Parar serviços do Servidor Web Local                    #"
-echo "# 4 - Sair do script...                                       #"
-echo "#                                                             #"
-echo "# ----------------------------------------------------------- #"
+echo "+-------------------------------------------------------------+"
+echo "|       Script de Administração do Servidor Web Local         |"
+echo "+-------------------------------------------------------------+"
+echo "|                                                             |"
+echo "| 1 - Iniciar serviços do Servidor Web Local                  |"
+echo "| 2 - Verificar status do Servidor Web Local                  |"
+echo "| 3 - Parar serviços do Servidor Web Local                    |"
+echo "| 9 - Sair do scriptv                                         |"
+echo "|                                                             |"
+echo "+-------------------------------------------------------------+"
 echo ""
 echo ""
 read opcao;
@@ -90,6 +90,7 @@ then
     echo ""
 elif [ $opcao == "4" ];
 then
-    echo -e "# \e[01;36mAté mais!"
+    sleep 1
+    echo -e "# \e[01;36mAté mais!\e[00m]"
     exit
 fi
