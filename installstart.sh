@@ -1,18 +1,18 @@
 #!/bin/bash
-# Script desenvolvido por mim
-# 30 DEZ 2023
+# Script desenvolvido por Samuel Carneiro (eu mesmo ^^)
+# 30 DEZ 2023 UPD 07 FEV 2024
 echo "+--------------------------------------------------------------+"
 echo "|         SCRIPT START LINUX - O QUE DESEJA FAZER?             |"
 echo "+--------------------------------------------------------------+"
 echo "|                                                              |"
 echo "| Selecione uma opção:                                         |"
 echo "|                                                              |"
-echo "| 1 - Atualizar Pacotes e Programas                            |"
-echo "| 2 - Instalação Inicial                                       |"
-echo "| 3 - Instalar Programas                                       |"
-echo "| 4 - Programas/Softwares DEV                                  |"
+echo "| 1 - Atualizar Pacotes e Programas Pré Instalados & Sistema   |"
+echo "| 2 - Instalação Inicial Essencial                             |"
+echo "| 3 - Escolher Qual Programa Instalar                          |"
+echo "| 4 - Ambiente Desenvolvimento/Programação                     |"
 echo "| 5 - Limpeza Lógica                                           |"
-echo "| 9 - Sair do Script                                           |"
+echo "| 99 - Sair do Script                                          |"
 echo "|                                                              |"
 echo "+--------------------------------------------------------------+"
 echo "Opção desejada: "
@@ -20,7 +20,7 @@ read opcao;
 
 if [ $opcao == "1" ];
 then
-    echo -e "\e[01;36mAtualizando pacotes e programas!\e[00m"
+    echo -e "\e[01;36mAtualizando pacotes, programas e sistema!\e[00m"
     sudo apt update && sudo apt upgrade -y
     echo -e "\e[01;32mAtualização finalizada!\e[00m"
     echo ""
@@ -36,9 +36,13 @@ then
     fi
 elif [ $opcao == "2" ];
 then
-    echo -e "\e[01;36mInstalação inicial em andamento!\e[00m"
-    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch gimp -y
-    echo -e "\e[01;32mInstalação inicial finalizada!\e[00m"
+    echo -e "\e[01;36mInstalação Inicial Essencial em andamento!\e[00m"
+    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch gimp 7zip papirus-icon-theme -y
+    wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    sudo dpkg -i google-chrome*
+    sudo apt install -f
+    echo ""
+    echo -e "\e[01;32mInstalação Inicial Essencial finalizada!\e[00m"
     echo ""
     echo "Deseja continuar? [s/n] "
     read continuar
@@ -62,7 +66,8 @@ then
     echo "| 5 - Gimp                                                     |"
     echo "| 6 - Neofetch                                                 |"
     echo "| 7 - Pacotes Multimídia                                       |"
-    echo "| 9 - Retornar ao Menu Principal                               |"
+    echo "| 8 - Google Chrome (site oficial)                             |"
+    echo "| 99 - Retornar ao Menu Principal                              |"
     echo "+--------------------------------------------------------------+"
     read opcao2;
     if [ $opcao2 == "1" ];
@@ -101,7 +106,16 @@ then
         echo -e "\e[01;36mInstalação do Ubuntu Restricted Extras iniciada...\e[00m"
         sudo apt install ubuntu-restricted-extras -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "9" ];
+    elif [ $opcao2 == "8" ];
+    then
+        echo -e "\e[01;36mInstalação do Google Chrome iniciada...\e[00m"
+        wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+        sudo dpkg -i google-chrome*
+        sudo apt install -f
+        sudo dpkg -i google-chrome*
+        echo ""
+        echo -e "\e[01;32mInstalado com sucesso!\e[00m"
+    elif [ $opcao2 == "99" ];
     then
         echo -e "\e[01;33mRetornando ao menu principal!\e[00m"
     fi
@@ -119,7 +133,7 @@ then
     echo "| 4 - PHP                                                      |"
     echo "| 5 - Composer                                                 |"
     echo "| 6 - NodeJS                                                   |"
-    echo "| 9 - Retornar ao Menu Principal                               |"
+    echo "| 99 - Retornar ao Menu Principal                              |"
     echo "+--------------------------------------------------------------+"
     read opcaoDev;
     if [ $opcaoDev == "0" ];
@@ -229,7 +243,7 @@ then
         echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
         sudo apt-get update && sudo apt install nodejs -y
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
-    elif [ $opcao2 == "9" ];
+    elif [ $opcaoDev == "99" ];
     then
         echo "Voltando ao menu principal..."
     fi
@@ -251,7 +265,7 @@ then
         echo -e "\e[01;36mAté mais!\e[00m"
         exit
     fi
-elif [ $opcao == "9" ];
+elif [ $opcao == "99" ];
 then
     echo -e "\e[01;36mAté mais!\e[00m"
     exit
