@@ -134,6 +134,7 @@ then
     echo "| 4 - PHP                                                      |"
     echo "| 5 - Composer                                                 |"
     echo "| 6 - NodeJS                                                   |"
+    echo "| 7 - Python                                                   |"
     echo "| 99 - Retornar ao Menu Principal                              |"
     echo "+--------------------------------------------------------------+"
     read opcaoDev;
@@ -243,6 +244,14 @@ then
         NODE_MAJOR=20
         echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
         sudo apt-get update && sudo apt install nodejs -y
+        echo -e "\e[01;32mInstalado com sucesso!\e[00m"
+    elif [ $opcaoDev == "7" ];
+    then
+        echo -e "\e[01;36mInstalação Python3 iniciada...\e[00m"
+        sudo apt update
+        sudo apt install -y python3
+        sudo apt install -y python3-pip
+        sudo apt install -y python3-venv
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
     elif [ $opcaoDev == "99" ];
     then
