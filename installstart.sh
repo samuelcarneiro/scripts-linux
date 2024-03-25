@@ -37,13 +37,19 @@ then
 elif [ $opcao == "2" ];
 then
     echo -e "\e[01;36mInstalação Inicial Essencial em andamento!\e[00m"
+    sleep .5
     sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch gimp 7zip papirus-icon-theme libu2f-udev -y
     cd /tmp/ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
     cd
+    cd /tmp/ && wget https://code.visualstudio.com/docs/?dv=linux64_deb
+    sudo dpkg -i code*
+    sudo apt install -f
+    cd
     echo ""
     echo -e "\e[01;32mInstalação Inicial Essencial finalizada!\e[00m"
+    sleep .5
     echo ""
     echo "Deseja continuar? [s/n] "
     read continuar
@@ -68,6 +74,7 @@ then
     echo "| 6 - Neofetch                                                 |"
     echo "| 7 - Pacotes Multimídia                                       |"
     echo "| 8 - Google Chrome (site oficial)                             |"
+    echo "| 9 - Visual Studeo Code (site oficial)                        |"
     echo "| 99 - Retornar ao Menu Principal                              |"
     echo "+--------------------------------------------------------------+"
     read opcao2;
@@ -116,12 +123,22 @@ then
         sudo dpkg -i google-chrome*
         echo ""
         echo -e "\e[01;32mInstalado com sucesso!\e[00m"
+    elif [ $opcao2 == "9" ];
+    then
+        echo -e "\e[01;36mInstalação do VSCode iniciada...\e[00m"
+        sleep .5
+        cd /tmp/ && wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb
+        sudo dpkg -i vscode.deb
+        sudo apt install -f
+        sleep .5
+        echo ""
+        echo -e "\e[01;32mInstalado com sucesso!\e[00m"
+        sleep .5
     elif [ $opcao2 == "99" ];
     then
         echo -e "\e[01;33mRetornando ao menu principal!\e[00m"
     fi
     echo ""
-    ./installstart.sh
 elif [ $opcao == "4" ];
 then
     echo "+--------------------------------------------------------------+"
