@@ -43,8 +43,8 @@ then
     sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
     cd
-    cd /tmp/ && wget https://code.visualstudio.com/docs/?dv=linux64_deb
-    sudo dpkg -i code*
+    cd /tmp/ && wget "https://go.microsoft.com/fwlink/?LinkID=760868" -O vscode.deb
+    sudo dpkg -i vscode.deb
     sudo apt install -f
     cd
     echo ""
