@@ -38,7 +38,7 @@ elif [ $opcao == "2" ];
 then
     echo -e "\e[01;36mInstalação Inicial Essencial em andamento!\e[00m"
     sleep .5
-    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch gimp 7zip papirus-icon-theme libu2f-udev inxi mesa-utils gnome-tweaks -y
+    sudo apt install git vlc unrar ubuntu-restricted-extras qbittorrent gparted neofetch gimp 7zip papirus-icon-theme libu2f-udev inxi mesa-utils gnome-tweaks libfuse2 -y
     cd /tmp/ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
