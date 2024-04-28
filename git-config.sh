@@ -1,52 +1,63 @@
 #!/bin/bash
 # Script desenvolvido por Samuel Carneiro (eu mesmo ^^)
-# 08 FEV 2024
+# e dessa vez com uma ajuda do ChatGPT
+# 28 ABR 2024
 
-echo ""
-echo -e "\e[01;32m       Script de Configuração GIT \e[00m"
-echo -e "\e[01;32m+--------------------------------------+\e[00m"
-echo -e "\e[01;32m| 1 - Visualizar a configuração atual  |\e[00m"
-echo -e "\e[01;32m| 2 - Iniciar configuração do Git      |\e[00m"
-echo -e "\e[01;32m+--------------------------------------+\e[00m"
-echo -e "\e[01;32m+-----------Informe uma opção!---------+\e[00m"
+# Atualização
 
-read opcao;
-if [ $opcao == "1" ];
-    then
-        echo ""
-        echo -e "\e[01;32m+------------------------------------+\e[00m"
-        echo -e "\e[01;32m| Carregando a configuração atual... |\e[00m"
-        echo -e "\e[01;32m+------------------------------------+\e[00m"
-        sleep 1
-        git config --list
-        echo -e "\e[01;32m+------------------------------------+\e[00m"
-        echo ""
-elif [ $opcao == "2" ];
-    then
-        echo ""
-        echo -e "\e[01;32m+------------------------------------+\e[00m"
-        echo -e "\e[01;32m| Iniciando a configuração do GIT... |\e[00m"
-        echo -e "\e[01;32m+------------------------------------+\e[00m"
-        echo "- Nome do usuário:"
-        read userName;
-        git config --global user.name "$userName"
-        sleep 1
-        echo "- E-mail do usuário:"
-        read userEmail;
-        git config --global user.email "$userEmail"
-        sleep 1
-        echo "- Qual editor padrão?: [code = VSCode / vim / codium]"
-        read editor;
-        git config --global core.editor $editor
-        echo "- Definindo a Branch principal como 'main'"
-        git config --global init.defaultBranch main 
-        sleep 1
-        echo "- Salvando as credenciais do usuário no computador..."
-        git config --global credential.helper store 
-        sleep 1
-        echo ""
-        echo -e "\e[01;32m+--------------------------------------+\e[00m"
-        echo -e "\e[01;32m|        Configuração Finalizada!      |\e[00m"
-        echo -e "\e[01;32m+--------------------------------------+\e[00m"
-        echo ""
-fi
+# Função para visualizar as configurações atuais do Git no computador
+git_config_atual() {
+    echo ""
+    echo "Verificando as configurações atuais do Git..."
+    sleep 3
+    git config --list
+    echo ""
+}
+
+# Função para configurar o Git
+configurar_git() {
+    echo ""
+    echo "Iniciando a configuração do Git..."
+    sleep 1
+    read -p "Digite seu nome de usuário do Git: " username
+    read -p "Digite seu e-mail do Git: " email
+    sleep 1
+    git config --global user.name "$username"
+    git config --global user.email "$email"
+    read -p "Informe do editor de código (code = VSCode / vim / codium): " editor
+    sleep 1
+    git config --global core.editor "$editor"
+    echo ""
+    echo "Definindo a branch principal como 'main'..."
+    git config --global init.defaultBranch main
+    sleep 1
+    echo "Salvando as credenciais do usuário localmente..."
+    git config --global credential.helper store
+    sleep 1
+    echo ""
+    echo "Git configurado com sucesso!"
+    echo ""
+}
+
+# Exibir o menu...
+while true; do
+    clear
+    echo "--------------------------------------------"
+    echo "Selecione uma opção:                        "
+    echo "--------------------------------------------"
+    echo "1. Visualizar configurações atuais          "
+    echo "2. Configurar Git                           "
+    echo "3. Sair                                     "
+    echo "--------------------------------------------"
+
+    read -p "Opção: " opcao
+
+    case $opcao in 
+        1) git_config_atual ;;
+        2) configurar_git ;;
+        3) echo "Saindo das configurações..."; break ;;
+        *) echo "Opção inválida! Tente novamente." ;;
+    esac
+
+    read -p "Precione ENTER para continuar..."
+done
