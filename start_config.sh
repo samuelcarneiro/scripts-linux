@@ -22,7 +22,7 @@ install_essential_programs() {
     echo "Instalando programas essenciais..."
     echo ""
     sleep 1
-    sudo apt install qbittorrent gparted neofetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils -y
+    sudo apt install qbittorrent gparted neofetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils papirus-icon-theme -y
     cd /tmp/ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
