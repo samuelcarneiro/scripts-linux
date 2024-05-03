@@ -43,44 +43,33 @@ install_dev_tools() {
     echo ""
     echo "Instalando ferramentas de desenvolvedor/programador..."
     echo ""
+    echo "Instalando ferramentas essenciais..."
+    echo "."; sleep 1; echo "."; sleep 1; echo "."
+    sudo apt install git libu2f-udev libfuse2 build-essential curl wget software-properties-common apt-transport-https
+    echo ""
+    echo -e "\e[01;32mSoftwares instalados com sucesso!\e[00m"
+    echo ""
     sleep 1
-
-    # Ferramentas essenciais...
 
     # Opções de linguagem de programação
     echo "Selecione qual linguagem de programação irá instalar: "
-    echo "1. Essencial"
-    echo "2. Python"
-    echo "3. Node.js"
-    echo "4. Java"
-    echo "5. C"
-    echo "6. Voltar..."
+    echo "1. Python"
+    echo "2. Node.js"
+    echo "3. Java"
+    echo "4. C"
+    echo "5. Voltar..."
     echo ""
 
     read -p "Opção: " opcao_lang
     case $opcao_lang in 
-        1) install_essential_dev ;;
-        2) install_python ;;
-        3) install_nodejs ;;
-        4) install_java ;;
-        5) install_c ;;
-        6) return ;;
+        1) install_python ;;
+        2) install_nodejs ;;
+        3) install_java ;;
+        4) install_c ;;
+        5) return ;;
         *) echo "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
 }
-
-    # Função para instalação essencial de desenvolvimento
-    install_essential_dev() {
-        echo ""
-        echo "Instalação de softwares essenciais para ambiente de desenvolvimento..."
-        echo ""
-        sudo apt install git libu2f-udev libfuse2 build-essential curl wget software-properties-common apt-transport-https
-        sleep 1
-        echo ""
-        echo -e "\e[01;32mSoftwares instalados com sucesso!\e[00m"
-        echo ""
-    }
-
     # Função para instalar o Python
     install_python() {
         echo ""
@@ -124,6 +113,7 @@ install_dev_tools() {
         sleep 1
         sudo apt install -y gcc
         sleep 1
+        echo ""
         echo -e "\e[01;32mLinguagem de programação C instalada com sucesso!\e[00m"
         echo ""
     }
