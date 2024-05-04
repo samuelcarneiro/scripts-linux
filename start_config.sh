@@ -22,7 +22,7 @@ install_essential_programs() {
     echo "Instalando programas essenciais..."
     echo ""
     sleep 1
-    sudo apt install qbittorrent gparted neofetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils papirus-icon-theme -y
+    sudo apt install qbittorrent gparted neofetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils -y
     cd /tmp/ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
@@ -35,6 +35,36 @@ install_essential_programs() {
     cd
     echo ""
     echo -e "\e[01;32mInstalações finalizadas!\e[00m"
+    echo ""
+}
+
+# Função para instalação de icones e personalização
+create_folders() {
+    mkdir ~/.themes
+    mkdir ~/.icons
+}
+
+copy_folders() {
+    cp -r customization/Prof-Gnome-Light-3.6/ ~/.themes
+    cp -r customization/Prof-Gnome-Dark-3.6/ ~/.themes
+    cp -r customization/McMojave-cursors/ ~/.icons
+}
+
+install_customization() {
+    echo ""
+    echo "Instalando pacote de ícones Papirus..."
+    sleep .5
+    sudo apt install papirus-icon-theme -y
+    echo ""
+    echo "Criando pastas .themes e .icons..."
+    sleep .5
+    create_folders;
+    echo "Copiando temas e icones para as pastas..."
+    sleep .5
+    copy_folders;
+    echo "Cópia concluída!"
+    echo ""
+    echo "Agora você pode alterar os temas e icones utilizando o GnomeTweaks!"
     echo ""
 }
 
@@ -153,8 +183,9 @@ while true; do
     echo "2. Instalar programas essenciais            "
     echo "3. Instalar ferramentas de desenvolvedor    "
     echo "4. Instalar pacotes multimídia              "
-    echo "5. Realizar limpeza lógica                  "
-    echo "6. Sair                                     "
+    echo "5. Configurar icones e temas                "
+    echo "6. Realizar limpeza lógica                  "
+    echo "7. Sair                                     "
     echo "--------------------------------------------"
 
     read -p "Opção: " opcao
@@ -164,8 +195,9 @@ while true; do
         2) install_essential_programs ;;
         3) install_dev_tools ;;
         4) install_multimidia ;;
-        5) logic_limp ;;
-        6) echo "Saindo..." ; break ;;
+        5) install_customization ;;
+        6) logic_limp ;;
+        7) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
 
