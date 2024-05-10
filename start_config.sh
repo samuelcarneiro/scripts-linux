@@ -39,32 +39,31 @@ install_essential_programs() {
 }
 
 # Função para instalação de icones e personalização
-create_folders() {
-    mkdir ~/.themes
-    mkdir ~/.icons
-}
+#create_folders() {
+#    mkdir ~/.themes
+#    mkdir ~/.icons
+#}
 
 copy_folders() {
-    cp -r customization/Prof-Gnome-Light-3.6/ ~/.themes
-    cp -r customization/Prof-Gnome-Dark-3.6/ ~/.themes
-    cp -r customization/McMojave-cursors/ ~/.icons
+    sudo cp -r ./temas_icones/Prof-Gnome-Light-3.6/ /usr/share/themes
+    sudo cp -r ./temas_icones/Prof-Gnome-Dark-3.6/ /usr/share/themes
+    sudo cp -r ./temas_icones/McMojave-cursors/ /usr/share/icons
 }
 
 install_customization() {
-    echo ""
-    echo "Instalando pacote de ícones Papirus..."
-    sleep .5
-    sudo apt install papirus-icon-theme -y
-    echo ""
-    echo "Criando pastas .themes e .icons..."
-    sleep .5
-    create_folders;
+    #echo "Criando pastas .themes e .icons..."
+    #sleep .5
+    #create_folders;
     echo "Copiando temas e icones para as pastas..."
     sleep .5
     copy_folders;
     echo "Cópia concluída!"
     echo ""
     echo "Agora você pode alterar os temas e icones utilizando o GnomeTweaks!"
+    echo ""
+    echo "Instalando pacote de ícones Papirus..."
+    sleep .5
+    sudo apt install papirus-icon-theme -y
     echo ""
 }
 
