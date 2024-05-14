@@ -9,7 +9,7 @@ Automatiza e torna mais rápido a configuração inicial do sistema operacional
 (linguagens de programação e ferramentas).
 
 ## Configuração do GIT
-![preview](./.github/script_config_git.png)
+![preview](./.github/script_git_config.png)
 
 Script que permite a visualização e/ou configuração do GIT no sistema operacional.
 
