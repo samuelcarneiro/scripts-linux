@@ -22,7 +22,7 @@ install_essential_programs() {
     echo "Instalando programas essenciais..."
     echo ""
     sleep 1
-    sudo apt install qbittorrent gparted neofetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils -y
+    sudo apt install qbittorrent gparted neofetch cpufetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils git libu2f-udev libfuse2 build-essential curl wget software-properties-common apt-transport-https-y
     cd /tmp/ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
     sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
@@ -38,19 +38,8 @@ install_essential_programs() {
     echo ""
 }
 
-# Função para instalação de ferramentas de desenvolvedor/programador
+# Função para instalação de linguagens de programação
 install_dev_tools() {
-    echo ""
-    echo "Instalando ferramentas de desenvolvedor/programador..."
-    echo ""
-    echo "Instalando ferramentas essenciais..."
-    echo "."; sleep 1; echo "."; sleep 1; echo "."
-    sudo apt install git libu2f-udev libfuse2 build-essential curl wget software-properties-common apt-transport-https
-    echo ""
-    echo -e "\e[01;32mSoftwares instalados com sucesso!\e[00m"
-    echo ""
-    sleep 1
-
     # Opções de linguagem de programação
     echo "Selecione qual linguagem de programação irá instalar: "
     echo "1. Python"
@@ -69,7 +58,6 @@ install_dev_tools() {
         5) return ;;
         *) echo "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
-}
     # Função para instalar o Python
     install_python() {
         echo ""
@@ -117,6 +105,7 @@ install_dev_tools() {
         echo -e "\e[01;32mLinguagem de programação C instalada com sucesso!\e[00m"
         echo ""
     }
+}
 
 # Função para instalar pacote multimídia
 install_multimidia() {
