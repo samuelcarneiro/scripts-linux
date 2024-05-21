@@ -132,6 +132,15 @@ logic_limp() {
     echo ""
 }
 
+# Atalhos no arquivo .bashrc
+shortcut() {
+    echo " "
+    echo "#Meus atalhos" >> ~/.bashrc
+    echo 'alias atualizar="sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
+    echo 'alias limpar="sudo apt autoremove && sudo apt autoclean -y"' >> ~/.bashrc
+    echo 'alias info="neofetch && cpufetch"' >> ~/.bashrc
+}
+
 # Exibir menu
 while true; do
     clear
@@ -143,6 +152,7 @@ while true; do
     echo "3. Instalar ferramentas de desenvolvedor    "
     echo "4. Instalar pacotes multimídia              "
     echo "5. Realizar limpeza lógica                  "
+    echo "6. Atalhos de comandos no .bashrc           "
     echo "0. Sair                                     "
     echo "--------------------------------------------"
 
@@ -154,6 +164,7 @@ while true; do
         3) install_dev_tools ;;
         4) install_multimidia ;;
         5) logic_limp ;;
+        6) shortcut ;;
         0) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
