@@ -139,6 +139,8 @@ shortcut() {
     echo 'alias atualizar="sudo apt update && sudo apt upgrade -y"' >> ~/.bashrc
     echo 'alias limpar="sudo apt autoremove && sudo apt autoclean -y"' >> ~/.bashrc
     echo 'alias info="neofetch && cpufetch"' >> ~/.bashrc
+    echo 'alias instalar="sudo apt install -y"' >> ~/.bashrc
+    echo 'alias remove="sudo apt remove"' >> ~/.bashrc
     echo ""
     echo -e "\e[01;32mPara os atalhos funcionarem... reinicie o terminal.\e[00m"
 }
