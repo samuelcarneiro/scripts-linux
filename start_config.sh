@@ -23,16 +23,7 @@ install_essential_programs() {
     echo ""
     sleep 1
     sudo apt install qbittorrent gparted neofetch cpufetch gimp inxi gnome-tweaks fonts-firacode ubuntu-restricted-extras mesa-utils git libu2f-udev libfuse2 build-essential curl wget software-properties-common apt-transport-https -y
-    cd /tmp/ && wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-    sudo dpkg -i /tmp/google-chrome*
     sudo apt install -f
-    cd
-    cd /tmp/ && wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-    sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-    sudo apt update
-    sudo apt install -y code
-    sudo apt install -f
-    cd
     echo ""
     echo -e "\e[01;32mInstalações finalizadas!\e[00m"
     echo ""
@@ -43,19 +34,17 @@ install_dev_tools() {
     # Opções de linguagem de programação
     echo "Selecione qual linguagem de programação irá instalar: "
     echo "1. Python"
-    echo "2. Node.js"
-    echo "3. Java"
-    echo "4. C"
-    echo "5. Voltar..."
+    echo "2. Java"
+    echo "3. C"
+    echo "0. Voltar..."
     echo ""
 
     read -p "Opção: " opcao_lang
     case $opcao_lang in 
         1) install_python ;;
-        2) install_nodejs ;;
-        3) install_java ;;
-        4) install_c ;;
-        5) return ;;
+        2) install_java ;;
+        3) install_c ;;
+        0) return ;;
         *) echo "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
     # Função para instalar o Python
@@ -67,18 +56,6 @@ install_dev_tools() {
         sleep 1
         echo ""
         echo -e "\e[01;32mLinguagem de programação Python instalada com sucesso!\e[00m"
-        echo ""
-    }
-
-    # Função para instalar o Node.js
-    install_nodejs() {
-        echo ""
-        echo "Instalando Node.js..."
-        sleep 1
-        curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-        sudo apt-get install -y nodejs
-        echo ""
-        echo -e "\e[01;32mNode.js instalado com sucesso!\e[00m"
         echo ""
     }
 
