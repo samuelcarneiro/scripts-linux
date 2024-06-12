@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Script desenvolvido por Samuel Carneiro (eu mesmo ^^)
-# CREATED 30 DEZ 2023 -> UPD 28 ABR 2024
+# CREATED 30 DEZ 2023 -> UPD 11 JUN 2024
 
 # Função para atualizar os pacotes do sistema operacional
 update_system() {
@@ -51,6 +51,7 @@ install_dev_tools() {
     install_python() {
         echo ""
         echo "Instalando Python..."
+        echo ""
         sleep 1
         sudo apt install -y python3 python3-pip python3-venv
         sleep 1
@@ -63,6 +64,7 @@ install_dev_tools() {
     install_java() {
         echo ""
         echo "Instalando JRE e JDK (JAVA)..."
+        echo ""
         sleep 1
         sudo apt install -y default-jre default-jdk
         sleep 1
@@ -75,6 +77,7 @@ install_dev_tools() {
     install_c() {
         echo ""
         echo "Instalando C..."
+        echo ""
         sleep 1
         sudo apt install -y gcc
         sleep 1
@@ -126,7 +129,7 @@ shortcut() {
 while true; do
     clear
     echo "--------------------------------------------"
-    echo "Menu de configuração:                       "
+    echo "           Menu de configuração             "
     echo "--------------------------------------------"
     echo "1. Atualizar sistema operacional            "
     echo "2. Instalar programas essenciais            "
