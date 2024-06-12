@@ -35,7 +35,7 @@ configurar_git() {
     git config --global credential.helper store
     sleep 1
     echo ""
-    echo "Git configurado com sucesso!"
+    echo -e "\e[01;32mGit configurado com sucesso!\e[00m"
     echo ""
 }
 
@@ -43,11 +43,11 @@ configurar_git() {
 while true; do
     clear
     echo "--------------------------------------------"
-    echo "Selecione uma opção:                        "
+    echo "           Selecione uma opção              "
     echo "--------------------------------------------"
     echo "1. Visualizar configurações atuais          "
     echo "2. Configurar Git                           "
-    echo "3. Sair                                     "
+    echo "0. Sair                                     "
     echo "--------------------------------------------"
 
     read -p "Opção: " opcao
@@ -55,7 +55,7 @@ while true; do
     case $opcao in 
         1) git_config_atual ;;
         2) configurar_git ;;
-        3) echo "Saindo das configurações..."; break ;;
+        0) echo "Saindo das configurações..."; break ;;
         *) echo "Opção inválida! Tente novamente." ;;
     esac
 
