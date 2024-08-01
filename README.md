@@ -2,16 +2,14 @@
 
 ## Atualização, configuração e instalação
 
-![preview](./.github/script_start_config.png)
+![preview](./.github/startconfig.png)
 
-Automatiza e torna mais rápido a configuração inicial do sistema operacional
-(programas e softwares) do linux e do meu ambiente de desenvolvimento/programação
-(linguagens de programação e ferramentas).
+Automatiza a configuração inicial do Linux que eu uso, baseado em Debian.
 
 ## Configuração do GIT
-![preview](./.github/script_git_config.png)
+![preview](./.github/gitconfig.png)
 
-Script que permite a visualização e/ou configuração do GIT no sistema operacional.
+Script que permite a visualização e/ou configuração do GIT no sistema operacional Linux.
 
 ----
 #### *Serve para distribuições Linux baseada em Debian (APT)*
