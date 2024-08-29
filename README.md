@@ -13,5 +13,6 @@ Automatiza a configuração inicial do Linux que eu uso, baseado em Debian.
 Script que permite a visualização e/ou configuração do GIT no sistema operacional Linux.
 
 ----
-#### *Serve para distribuições Linux baseada em Debian (APT)*
+#### *Serve para distribuições Linux baseada em Debian (APT) - o script 'start_config_version_deb'*
+#### *Serve para distribuição Linux Fedora (RPM) - o script 'start_config_version_rpm'*
 #### *Desenvolvido no Pop!_OS*
