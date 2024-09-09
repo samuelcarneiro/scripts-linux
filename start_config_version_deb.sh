@@ -37,10 +37,10 @@ install_dev_programs() {
     echo "Instalando ferramentas DEV..."
     echo ""
     sleep 1
-    sudo apt install fonts-firacode git libu2f-udev libfuse2 build-essential curl wget dkms perl software-properties-common apt-transport-https vlc ffmpeg python3 python3-pip python3-venv default-jre default-jdk gcc make efault-libmysqlclient-dev libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm \
+    sudo apt install fonts-firacode git libu2f-udev libfuse2 build-essential curl wget dkms perl software-properties-common apt-transport-https vlc ffmpeg python3 python3-pip python3-venv default-jre default-jdk gcc make default-libmysqlclient-dev libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm \
     libncurses5-dev libncursesw5-dev \
     xz-utils tk-dev libffi-dev liblzma-dev python3-openssl -y
-    curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
     echo ""
     echo -e "\e[01;32mInstalações finalizadas!\e[00m"
     echo ""
