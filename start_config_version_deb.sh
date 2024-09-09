@@ -41,8 +41,6 @@ install_dev_programs() {
     libncurses5-dev libncursesw5-dev \
     xz-utils tk-dev libffi-dev liblzma-dev python3-openssl -y
     curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
-    sudo apt install -f
-
     echo ""
     echo -e "\e[01;32mInstalações finalizadas!\e[00m"
     echo ""
