@@ -18,6 +18,7 @@ git_config_atual() {
 configurar_git() {
     echo ""
     echo "Iniciando a configuração do Git..."
+    echo ""
     sleep 1
     read -p "Digite seu nome de usuário do Git: " username
     read -p "Digite seu e-mail do Git: " email
@@ -27,7 +28,6 @@ configurar_git() {
     read -p "Informe do editor de código (code = VSCode / vim / codium): " editor
     sleep 1
     git config --global core.editor "$editor"
-    echo ""
     echo "Definindo a branch principal como 'main'..."
     git config --global init.defaultBranch main
     sleep 1
@@ -45,7 +45,7 @@ while true; do
     echo "--------------------------------------------"
     echo "           Selecione uma opção              "
     echo "--------------------------------------------"
-    echo "1. Visualizar configurações atuais          "
+    echo "1. Configurações atuais                     "
     echo "2. Configurar Git                           "
     echo "0. Sair                                     "
     echo "--------------------------------------------"
