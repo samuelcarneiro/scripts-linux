@@ -24,7 +24,6 @@ add_repository() {
     sleep 1
     sudo dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm -y
     sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-40
-    echo ""
     sudo dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm -y
     sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-40
     echo ""
@@ -65,7 +64,7 @@ dev() {
     echo "Instalando ferramentas Dev e linguagens de programação..."
     echo ""
     sleep 1
-    sudo dnf install python3 python3-pip nodejs java-21-openjdk -y
+    sudo dnf install python3 python3-pip -y
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
     dnf check-update
@@ -88,17 +87,6 @@ logic_limp() {
     echo ""
 }
 
-# Atalhos no arquivo .bashrc
-shortcut() {
-    echo " "
-    echo "#Meus atalhos" >> ~/.bashrc
-    echo 'alias atualizar="sudo dnf update -y"' >> ~/.bashrc
-    echo 'alias limpar="sudo dnf autoremove"' >> ~/.bashrc
-    echo 'alias info="neofetch && cpufetch"' >> ~/.bashrc
-    echo ""
-    echo -e "\e[01;32mPara os atalhos funcionarem... reinicie o terminal.\e[00m"
-}
-
 # Exibir menu
 while true; do
     clear
@@ -111,7 +99,6 @@ while true; do
     echo "4. Instalar programas essenciais            "
     echo "5. Instalar ferramentas DEV                 "
     echo "6. Realizar limpeza lógica                  "
-    echo "7. Atalhos de comandos no .bashrc           "
     echo "0. Sair                                     "
     echo "--------------------------------------------"
 
@@ -124,7 +111,6 @@ while true; do
         4) install_essential_programs ;;
         5) dev ;;
         6) logic_limp ;;
-        7) shortcut ;;
         0) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
