@@ -3,12 +3,12 @@
 
 ## Atualização, configuração e instalação
 
-![preview](./.github/startconfig.png)
+![preview](./.github/start-config-deb.png)
 
 Automatiza a configuração inicial do Linux que eu uso, baseado em Debian.
 
 ## Configuração do GIT
-![preview](./.github/gitconfig.png)
+![preview](./.github/git-config.png)
 
 Script que permite a visualização e/ou configuração do GIT no sistema operacional Linux.
 
