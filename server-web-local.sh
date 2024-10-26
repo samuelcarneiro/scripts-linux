@@ -85,15 +85,15 @@ stop_services() {
 #Exibir o menu
 while true; do
     clear
-    echo "------------------------------"
-    echo "       Servidor Web Local     "
-    echo "------------------------------"
-    echo " 1. Instalar servidor         "
-    echo " 2. Iniciar serviços          "
-    echo " 3. Reiniciar serviços        "
-    echo " 4. Parar serviços            "
-    echo " 0. Sair                      "
-    echo "------------------------------"
+    echo "------------------------------------"
+    echo "        Servidor Web Local          "
+    echo "------------------------------------"
+    echo " 1. Instalar servidor Apache2&MySQL "
+    echo " 2. Iniciar serviços                "
+    echo " 3. Reiniciar serviços              "
+    echo " 4. Parar serviços                  "
+    echo " 0. Sair                            "
+    echo "------------------------------------"
 
     # Capturar escolha
     read -p "Opção: " opcao
