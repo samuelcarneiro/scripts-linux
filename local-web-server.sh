@@ -86,9 +86,9 @@ stop_services() {
 while true; do
     clear
     echo "------------------------------------"
-    echo "        Servidor Web Local          "
+    echo "         Web Server Local           "
     echo "------------------------------------"
-    echo " 1. Instalar servidor Apache2&MySQL "
+    echo " 1. Instalar Apache2&MySQL          "
     echo " 2. Iniciar serviços                "
     echo " 3. Reiniciar serviços              "
     echo " 4. Parar serviços                  "
