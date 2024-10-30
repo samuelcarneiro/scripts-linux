@@ -1,18 +1,25 @@
 # Scripts Ambiente Linux
 ![BashScript](https://img.shields.io/badge/bash%20script-0101?style=flat&logo=gnubash&logoColor=%23FFFFFF&labelColor=%23000000)
 
-## Atualização, configuração e instalação
-
-![preview](./.github/start-config-deb.png)
-
-Automatiza a configuração inicial do Linux que eu uso, baseado em Debian.
-
 ## Configuração do GIT
-![preview](./.github/git-config.png)
+![preview](./.github/script-git.png)
 
 Script que permite a visualização e/ou configuração do GIT no sistema operacional Linux.
 
+## Atualização, configuração e instalação
+
+![preview](./.github/script-deb.png)
+
+Automatiza a configuração inicial do Linux que eu uso, baseado em Debian.
+
+![preview](./.github/script-rpm.png)
+
+Automatiza a configuração inicial do Linux que eu uso, baseado em Fedora.
+
+## Instalação e configuração de um Web Server Local com Apache2&MySQL
+
+![preview](./.github/local-server-script.png)
+
+
 ----
-#### *Serve para distribuições Linux baseada em Debian (APT) - o script 'start_config_version_deb'*
-#### *Serve para distribuição Linux Fedora (RPM) - o script 'start_config_version_rpm'*
-#### *Desenvolvido no Pop!_OS*
+Desenvolvido por mim 
