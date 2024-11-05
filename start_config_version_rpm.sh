@@ -22,10 +22,10 @@ add_repository() {
     echo "Adicionando repositórios FREE e NON-FREE..."
     echo ""
     sleep 1
-    sudo dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-40.noarch.rpm -y
-    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-40
-    sudo dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-40.noarch.rpm -y
-    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-40
+    sudo dnf install http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-41.noarch.rpm -y
+    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-free-fedora-41
+    sudo dnf install http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-41.noarch.rpm -y
+    sudo rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-rpmfusion-nonfree-fedora-41
     echo ""
     echo -e "\e[01;32mRepositórios adicionados com sucesso\!\e[00m"
     echo ""
@@ -52,7 +52,7 @@ install_essential_programs() {
     echo "Instalando programas essenciais..."
     echo ""
     sleep 1
-    sudo dnf install neofetch inxi cpufetch gnome-tweaks gnome-extensions-app unrar qbittorrent gparted gimp vlc discord steam papirus-icon-theme -y && sudo dnf install 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm' -y
+    sudo dnf install inxi cpufetch gnome-tweaks gnome-extensions-app unrar qbittorrent gparted gimp vlc steam papirus-icon-theme -y && sudo dnf install 'https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm' -y
     echo ""
     echo -e "\e[01;32mInstalações finalizadas!\e[00m"
     echo ""
