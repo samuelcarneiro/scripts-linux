@@ -75,6 +75,21 @@ dev() {
     echo ""
 }
 
+# Instalação do PHP
+install_php() {
+    echo ""
+    echo "Instalando o PHP, Composer e Módulo MySQL..."
+    echo ""
+    sleep 1
+    sudo dnf install php-cli -y
+    sudo dnf install phpunit composer -y
+    sudo dnf install php-mysqli
+    echo ""
+    #echo "Atualização finalizada!"
+    echo -e "\e[01;32mInstalações finalizadas com sucesso\!\e[00m"
+    echo ""
+}
+
 # Função para realizar limpeza lógica...
 logic_limp() {
     echo ""
@@ -90,17 +105,18 @@ logic_limp() {
 # Exibir menu
 while true; do
     clear
-    echo "--------------------------------------------"
-    echo "           Menu de configuração             "
-    echo "--------------------------------------------"
-    echo "1. Atualizar sistema operacional            "
-    echo "2. Adicionar repositórios FREE e NON-FREE   "
-    echo "3. Instalar drivers AMD                     "
-    echo "4. Instalar programas essenciais            "
-    echo "5. Instalar ferramentas DEV                 "
-    echo "6. Realizar limpeza lógica                  "
-    echo "0. Sair                                     "
-    echo "--------------------------------------------"
+    echo "------------------------------------------------------"
+    echo "                Menu de configuração                  "
+    echo "------------------------------------------------------"
+    echo "1. Atualizar sistema operacional                      "
+    echo "2. Adicionar repositórios FREE e NON-FREE             "
+    echo "3. Instalar drivers AMD                               "
+    echo "4. Instalar programas essenciais                      "
+    echo "5. Instalar ferramentas DEV                           "
+    echo "6. Instalar PHP e Composer                            "
+    echo "7. Realizar limpeza lógica                            "
+    echo "0. Sair                                               "
+    echo "------------------------------------------------------"
 
     read -p "Opção: " opcao
 
@@ -110,7 +126,8 @@ while true; do
         3) driver_install ;;
         4) install_essential_programs ;;
         5) dev ;;
-        6) logic_limp ;;
+        6) install_php ;;
+        7) logic_limp ;;
         0) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
