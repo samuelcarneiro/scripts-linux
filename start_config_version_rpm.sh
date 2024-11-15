@@ -75,6 +75,22 @@ dev() {
     echo ""
 }
 
+# Instalação do MySQL
+install_mysql() {
+    echo ""
+    echo "Instalando o MySQL..."
+    echo ""
+    sleep 1
+    sudo dnf install mysql-server -y
+    sudo systemctl start mysqld
+    sudo systemctl enable mysqld
+    sudo mysql_secure_installation
+    echo ""
+    #echo "Atualização finalizada!"
+    echo -e "\e[01;32mInstalações e configurações finalizadas com sucesso\!\e[00m"
+    echo ""
+}
+
 # Instalação do PHP
 install_php() {
     echo ""
@@ -113,8 +129,9 @@ while true; do
     echo "3. Instalar drivers AMD                               "
     echo "4. Instalar programas essenciais                      "
     echo "5. Instalar ferramentas DEV                           "
-    echo "6. Instalar PHP e Composer                            "
-    echo "7. Realizar limpeza lógica                            "
+    echo "6. Instalar MySQL e Mysql Secure Instalation          "
+    echo "7. Instalar PHP e Composer                            "
+    echo "8. Realizar limpeza lógica                            "
     echo "0. Sair                                               "
     echo "------------------------------------------------------"
 
@@ -126,8 +143,9 @@ while true; do
         3) driver_install ;;
         4) install_essential_programs ;;
         5) dev ;;
-        6) install_php ;;
-        7) logic_limp ;;
+        6) install_mysql ;;
+        7) install_php ;;
+        8) logic_limp ;;
         0) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
