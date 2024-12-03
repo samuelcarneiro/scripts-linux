@@ -3,6 +3,17 @@
 # Script desenvolvido por Samuel Almeida (eu mesmo ^^)
 # CREATED 28 AGO 2024
 
+#Função para otimizar o DNF
+optimization_dnf() {
+    echo ""
+    sudo sh -c 'echo "max_parallel_downloads=10" >> /etc/dnf/dnf.conf'
+    sudo sh -c 'echo "faststmirror=true" >> /etc/dnf/dnf.conf'  
+    sudo sh -c 'echo "deltarpm=true" >> /etc/dnf/dnf.conf'
+    echo ""
+    echo -e "\e[01;32mConfiguração do DNF finalizada!\e[00m"
+    echo ""
+}
+
 # Função para atualizar os pacotes do sistema operacional
 update_system() {
     echo ""
@@ -124,28 +135,30 @@ while true; do
     echo "------------------------------------------------------"
     echo "                Menu de configuração                  "
     echo "------------------------------------------------------"
-    echo "1. Atualizar sistema operacional                      "
+    echo "1. Otimizar o DNF                                     "
     echo "2. Adicionar repositórios FREE e NON-FREE             "
-    echo "3. Instalar drivers AMD                               "
-    echo "4. Instalar programas essenciais                      "
-    echo "5. Instalar ferramentas DEV                           "
-    echo "6. Instalar MySQL e Mysql Secure Instalation          "
-    echo "7. Instalar PHP e Composer                            "
-    echo "8. Realizar limpeza lógica                            "
+    echo "3. Atualizar sistema operacional                      "
+    echo "4. Instalar drivers AMD                               "
+    echo "5. Instalar programas essenciais                      "
+    echo "6. Instalar ferramentas DEV                           "
+    echo "7. Instalar MySQL e Mysql Secure Instalation          "
+    echo "8. Instalar PHP e Composer                            "
+    echo "9. Realizar limpeza lógica                            "
     echo "0. Sair                                               "
     echo "------------------------------------------------------"
 
     read -p "Opção: " opcao
 
     case $opcao in
-        1) update_system ;;
+        1) optimization_dnf ;; 
         2) add_repository ;;
-        3) driver_install ;;
-        4) install_essential_programs ;;
-        5) dev ;;
-        6) install_mysql ;;
-        7) install_php ;;
-        8) logic_limp ;;
+        3) update_system ;;
+        4) driver_install ;;
+        5) install_essential_programs ;;
+        6) dev ;;
+        7) install_mysql ;;
+        8) install_php ;;
+        9) logic_limp ;;
         0) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
