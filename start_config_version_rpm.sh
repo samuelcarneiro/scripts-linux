@@ -117,6 +117,28 @@ install_php() {
     echo ""
 }
 
+# Instalação do NODEJS
+install_nodejs() {
+    echo "#### installs nvm (Node Version Manager)"
+    echo ""
+    curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+    echo ""
+    echo "#### Updated .bashrc"
+    source ~/.bashrc
+    echo ""
+    echo -n "#### Which version to install? (ex.: 22): "
+    read versionNode
+    echo "#### Installing chosen version..."
+    nvm install "$versionNode"
+    echo ""
+    echo "#### Node.js installed successfully!" 
+    echo ""
+    echo "#### Installed versions"
+    echo -n "Node.js: "; node -v;
+    echo -n "NPM: "; npm -v;
+    echo -n "NPX: "; npx -v;
+}
+
 # Função para realizar limpeza lógica...
 logic_limp() {
     echo ""
@@ -143,7 +165,8 @@ while true; do
     echo "6. Instalar ferramentas DEV                           "
     echo "7. Instalar MySQL e Mysql Secure Instalation          "
     echo "8. Instalar PHP e Composer                            "
-    echo "9. Realizar limpeza lógica                            "
+    echo "9. Instalar Node.js                                   "
+    echo "10. Realizar limpeza lógica                            "
     echo "0. Sair                                               "
     echo "------------------------------------------------------"
 
@@ -158,7 +181,8 @@ while true; do
         6) dev ;;
         7) install_mysql ;;
         8) install_php ;;
-        9) logic_limp ;;
+        9) install_nodejs ;;
+        10) logic_limp ;;
         0) echo "Saindo..." ; break ;;
         *) echo -e "\e[01;31mOpção inválida! Tente novamente.\e[00m" ;;
     esac
