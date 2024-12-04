@@ -131,12 +131,13 @@ install_nodejs() {
     echo "#### Installing chosen version..."
     nvm install "$versionNode"
     echo ""
-    echo "#### Node.js installed successfully!" 
+    echo -e "\e[01;32mNode.js installed successfully!\e[00m"
     echo ""
     echo "#### Installed versions"
     echo -n "Node.js: "; node -v;
     echo -n "NPM: "; npm -v;
     echo -n "NPX: "; npx -v;
+    echo ""
 }
 
 # Função para realizar limpeza lógica...
