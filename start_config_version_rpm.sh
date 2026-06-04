@@ -75,7 +75,7 @@ dev() {
     echo "Instalando ferramentas Dev e linguagens de programação..."
     echo ""
     sleep 1
-    sudo dnf install python3 python3-pip -y
+    sudo dnf install python3 python3-pip python3-tkinter -y
     sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
     echo -e "[code]\nname=Visual Studio Code\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\nenabled=1\ngpgcheck=1\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc" | sudo tee /etc/yum.repos.d/vscode.repo > /dev/null
     dnf check-update
