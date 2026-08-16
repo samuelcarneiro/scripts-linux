@@ -22,7 +22,7 @@ install_essential_programs() {
     echo "Instalando programas essenciais..."
     echo ""
     sleep 1
-    sudo apt install qbittorrent gparted neofetch cpufetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils git libu2f-udev libfuse2 software-properties-common vlc ffmpeg papirus-icon-theme -y
+    sudo apt install qbittorrent gparted neofetch cpufetch gimp inxi gnome-tweaks ubuntu-restricted-extras mesa-utils git libu2f-udev libfuse2 software-properties-common vlc ffmpeg papirus-icon-theme fonts-crosextra-carlito fonts-dejavu -y
     sudo apt install -f
     cd /tmp && wget -O google-chrome-stable.deb 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb' && sudo apt install ./google-chrome-stable.deb
 
@@ -31,7 +31,7 @@ install_essential_programs() {
     echo ""
 }
 
-# Função para instalação de programas essenciais
+# Função para instalação de ferramentas dev
 install_dev_programs() {
     echo ""
     echo "Instalando ferramentas DEV..."
@@ -44,7 +44,7 @@ install_dev_programs() {
     echo ""
     echo -e "\e[01;32mInstalações finalizadas!\e[00m"
     echo ""
-}
+}/
 
 # Função para instalação e configuração de um servidor WEB local
 # com PHP e MySQL
